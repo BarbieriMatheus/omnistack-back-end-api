@@ -4,7 +4,7 @@ const Box = require('../models/Box');
 class BoxController {
   // eslint-disable-next-line class-methods-use-this
   async store(req, res) {
-    const box = await Box.create(req.body.title);
+    const box = await Box.create({ title: req.body.title });
     return res.send(box);
   }
 
